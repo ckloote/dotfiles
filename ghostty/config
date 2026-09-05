@@ -1,0 +1,7 @@
+config-file = ?/os-specific.config
+theme = Catppuccin Mocha
+font-family = "FiraCode Nerd Font"
+window-padding-x = 10
+window-padding-y = 10
+confirm-close-surface = false
+copy-on-select = true
