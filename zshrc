@@ -10,6 +10,10 @@ antidote load "$HOME/.zsh_plugins.txt"
 bindkey '^F' autosuggest-accept
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
 
+# Cover both Linux/Ubuntu and standard xterm End key sequences
+bindkey '^[[F'  autosuggest-accept
+bindkey '^[[4~' autosuggest-accept
+
 # --- Starship Prompt ---
 eval "$(starship init zsh)"
 
