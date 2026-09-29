@@ -25,10 +25,16 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
-# --- Load NVM ---
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # --- opencode ---
 export PATH=/home/ckloote/.opencode/bin:$PATH
+
+# --- Local binary path ---
+export PATH="/home/ckloote/.local/bin:$PATH"
+
+# --- fnm ---
+FNM_PATH="/home/ckloote/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "$(fnm env --shell zsh)"
+  eval "$(fnm env --use-on-cd)"
+fi
